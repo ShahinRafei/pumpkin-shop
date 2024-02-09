@@ -6,4 +6,8 @@
   </router-view>
 </template>
   
-<style lang="scss"></style>  
+<style lang="scss">
+textarea:focus, input:focus{
+    outline: none;
+}
+</style>  
