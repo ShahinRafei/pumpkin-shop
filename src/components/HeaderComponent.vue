@@ -1,6 +1,6 @@
 <template>
     <header class="w-full">
-        <div class="relative z-10 bg-neutral-100 shadow-md">
+        <div class="relative z-50 bg-neutral-100 shadow-md">
             <div class="container mx-auto flex justify-between items-center p-2">
                 <!-- menu button and search -->
                 <div class="flex items-center">
