@@ -7,6 +7,9 @@
 </template>
   
 <style lang="scss">
+body {
+  background-color: rgb(244, 244, 244);
+}
 textarea:focus, input:focus{
     outline: none;
 }

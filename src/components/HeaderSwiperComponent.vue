@@ -49,7 +49,7 @@ let modules = [Autoplay, Pagination, Navigation];
 .swiper-button-next:hover {
     box-shadow: 0 0 5px orange;
     opacity: 80%;
-    transform: scale(100%);
+    transform: scale(80%);
 }
 
 .swiper-button-prev::after,
@@ -64,5 +64,10 @@ let modules = [Autoplay, Pagination, Navigation];
 
 .swiper-pagination-bullet-active {
     background-color: rgb(0, 157, 81) !important;
-}</style>
+}
+
+.swiper-button-prev.swiper-button-disabled, .swiper-button-next.swiper-button-disabled {
+    display: none !important;
+}
+</style>
   

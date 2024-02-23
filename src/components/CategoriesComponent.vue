@@ -1,25 +1,41 @@
 <template>
-    <div class="w-full px-10">
-        <swiper :pagination="true" :slidesPerView="4" :freeMode="true" :modules="modules">
-            <swiper-slide class="flex justify-center items-center">
-                <div class="w-32 h-32 aspect-square">
-                    <img src="@/assets/images/categories1.png" alt="categories1" class="w-full h-full object-cover">
-                </div>
+    <div class="container mx-auto">
+        <swiper :freeMode="true" :grabCursor="true" :slides-per-view="'auto'" :modules="modules">
+            <swiper-slide>
+                <img src="@/assets/images/categories1.png" alt="categories1" class="w-32 h-32 aspect-square object-cover">
             </swiper-slide>
-            <swiper-slide class="flex justify-center items-center">
-                <div class="w-32 h-32 aspect-square">
-                    <img src="@/assets/images/categories2.png" alt="categories1" class="w-full h-full object-cover">
-                </div>
+            <swiper-slide>
+                <img src="@/assets/images/categories2.png" alt="categories1" class="w-32 h-32 aspect-square object-cover">
             </swiper-slide>
-            <swiper-slide class="flex justify-center items-center">
-                <div class="w-32 h-32 aspect-square">
-                    <img src="@/assets/images/categories3.png" alt="categories1" class="w-full h-full object-cover">
-                </div>
+            <swiper-slide>
+                <img src="@/assets/images/categories3.png" alt="categories1" class="w-32 h-32 aspect-square object-cover">
             </swiper-slide>
-            <swiper-slide class="flex justify-center items-center">
-                <div class="w-32 h-32 aspect-square">
-                    <img src="@/assets/images/categories4.png" alt="categories1" class="w-full h-full object-cover">
-                </div>
+            <swiper-slide>
+                <img src="@/assets/images/categories4.png" alt="categories1" class="w-32 h-32 aspect-square object-cover">
+            </swiper-slide>
+            <swiper-slide>
+                <img src="@/assets/images/categories1.png" alt="categories1" class="w-32 h-32 aspect-square object-cover">
+            </swiper-slide>
+            <swiper-slide>
+                <img src="@/assets/images/categories2.png" alt="categories1" class="w-32 h-32 aspect-square object-cover">
+            </swiper-slide>
+            <swiper-slide>
+                <img src="@/assets/images/categories3.png" alt="categories1" class="w-32 h-32 aspect-square object-cover">
+            </swiper-slide>
+            <swiper-slide>
+                <img src="@/assets/images/categories4.png" alt="categories1" class="w-32 h-32 aspect-square object-cover">
+            </swiper-slide>
+            <swiper-slide>
+                <img src="@/assets/images/categories1.png" alt="categories1" class="w-32 h-32 aspect-square object-cover">
+            </swiper-slide>
+            <swiper-slide>
+                <img src="@/assets/images/categories2.png" alt="categories1" class="w-32 h-32 aspect-square object-cover">
+            </swiper-slide>
+            <swiper-slide>
+                <img src="@/assets/images/categories3.png" alt="categories1" class="w-32 h-32 aspect-square object-cover">
+            </swiper-slide>
+            <swiper-slide>
+                <img src="@/assets/images/categories4.png" alt="categories1" class="w-32 h-32 aspect-square object-cover">
             </swiper-slide>
         </swiper>
     </div>
@@ -31,11 +47,17 @@ import { Swiper, SwiperSlide } from 'swiper/vue';
 
 // Import Swiper styles
 import 'swiper/css';
-import 'swiper/css/pagination';
+import 'swiper/css/free-mode';
 
 // import required modules
-import { Pagination } from 'swiper/modules';
+import { FreeMode } from 'swiper/modules';
 
-let modules = [Pagination];
+let modules = [FreeMode];
 
 </script>
+
+<style scoped>
+.swiper-slide {
+    width: auto;
+}
+</style>
