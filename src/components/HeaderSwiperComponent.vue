@@ -4,7 +4,7 @@
         disableOnInteraction: false,
     }" :pagination="{
     clickable: true,
-}" :navigation="true" :loop="true" :modules="modules">
+}" :navigation="true" :loop="true" :modules="modules" class="border-b-2 border-orange-400">
         <swiper-slide>
             <img src="@/assets/images/banner1.webp" alt="" class="w-full h-[100px] sm:h-[200px] md:h-[300px] lg:h-[400px] object-cover">
         </swiper-slide>
