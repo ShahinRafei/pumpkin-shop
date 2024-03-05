@@ -1,9 +1,9 @@
 <template>
     <div
-        class="container mx-auto bg-gradient-to-b from-orange-100 to-orange-500 rounded-lg shadow-inner outline outline-4 outline-orange-200 py-5 px-1 my-5">
+        class="container mx-auto bg-gradient-to-b from-orange-700/5 to-orange-600/60 rounded-lg shadow-inner outline outline-4 outline-orange-700/5 py-5 px-1 my-5">
         <swiper :navigation="true" :slidesPerView="'auto'" :grabCursor="true" :spaceBetween="5" :freeMode="true" :modules="modules">
             <swiper-slide>
-                <div class="w-52 pl-5">
+                <div class="w-52 pl-5 opacity-80">
                     <img src="@/assets/images/up-to-off-percentage-15.png" alt="" class="w-full h-full object-cover">
                 </div>
             </swiper-slide>
