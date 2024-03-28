@@ -11,6 +11,7 @@
       <img src="@/assets/images/man_clothing_off.jpg" alt="man's clothing collection off" class="w-1/2 object-contain rounded-md shadow-md shadow-slate-400 border-2">
     </div>
     <PopularProductsComponent />
+    <FooterComponent />
   </div>
 </template>
 
@@ -22,4 +23,5 @@ import NavBarComponent from '@/components/NavBarComponent.vue';
 import CategoriesComponent from '@/components/CategoriesComponent.vue';
 import OffProductsComponent from '@/components/OffProductsComponent.vue';
 import PopularProductsComponent from '@/components/PopularProductsComponent.vue';
+import FooterComponent from '@/components/FooterComponent.vue';
 </script>
