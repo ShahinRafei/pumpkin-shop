@@ -8,19 +8,19 @@
         <swiper-slide>
             <router-link to="/categories/jewelery">
                 <img src="@/assets/images/banner1.webp" alt=""
-                    class="w-full h-[200px] sm:h-[250px] md:h-[300px] lg:h-[400px] object-fill">
+                    class="w-full h-[200px] sm:h-[250px] md:h-[350px] lg:h-[450px] object-fill">
             </router-link>
         </swiper-slide>
         <swiper-slide>
             <router-link to="/categories/jewelery">
                 <img src="@/assets/images/banner3.jpg" alt=""
-                    class="w-full h-[200px] sm:h-[250px] md:h-[300px] lg:h-[400px] object-fill">
+                    class="w-full h-[200px] sm:h-[250px] md:h-[350px] lg:h-[450px] object-fill">
             </router-link>
         </swiper-slide>
         <swiper-slide>
             <router-link to="/categories/jewelery">
                 <img src="@/assets/images/banner4.png" alt=""
-                    class="w-full h-[200px] sm:h-[250px] md:h-[300px] lg:h-[400px] object-fill">
+                    class="w-full h-[200px] sm:h-[250px] md:h-[350px] lg:h-[450px] object-fill">
             </router-link>
         </swiper-slide>
     </swiper>
