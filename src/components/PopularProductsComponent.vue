@@ -3,21 +3,21 @@
         <h2 class="font-semibold text-slate-600 text-2xl pb-10 pt-2">Popular Products</h2>
         <div class="w-full grid grid-cols-table-sm sm:grid-cols-table justify-items-center gap-5">
             <div v-for="product in productsList" :key="product"
-                class="w-52 bg-white p-3 rounded-md shadow-md flex flex-col justify-center items-center border-2 border-red-100 hover:scale-105 transition-transform">
+                class="w-32 sm:w-40 md:w-48 lg:w-52 bg-white p-3 rounded-md shadow-md flex flex-col justify-center items-center border-2 border-red-100 hover:scale-105 hover:border-red-300 transition-transform">
                 <img :src="product.image" :alt="product.title" class="w-full aspect-square object-contain border-b-2 pb-5">
                 <div class="w-full h-full flex flex-col justify-between items-center">
-                    <div class="w-full pt-2 text-center">
+                    <div class="w-full pt-2 text-center text-xs md:text-sm lg:text-base">
                         {{ product.title }}
                     </div>
                     <div class="relative flex flex-col max-w-max">
                         <div class="absolute w-full flex gap-1">
-                            <span v-for="number in 5" :key="number" class="text-lg text-slate-300">♥</span>
+                            <span v-for="number in 5" :key="number" class="text-sm md:text-base lg:text-lg text-red-700 opacity-50">♥</span>
                         </div>
-                        <div class="relative flex gap-1 bg-red-600 bg-clip-text overflow-hidden"
+                        <div class="relative flex gap-1 bg-red-700 bg-clip-text overflow-hidden"
                             :style="`width: ${product.rating.rate * 20}%`">
-                            <span v-for="number in 5" :key="number" class="text-lg text-transparent">♥</span>
+                            <span v-for="number in 5" :key="number" class="text-sm md:text-base lg:text-lg text-transparent">♥</span>
                         </div>
-                        <div class="text-center text-slate-400 -mt-2">({{ parseInt(product.rating.count) }} votes)</div>
+                        <div class="text-center text-slate-400 text-xs md:text-sm lg:text-base">({{ parseInt(product.rating.count) }} votes)</div>
                     </div>
                 </div>
             </div>

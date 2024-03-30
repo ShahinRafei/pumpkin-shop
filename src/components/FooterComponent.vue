@@ -42,7 +42,7 @@
         
 
         <div
-            class="w-full border-t-2 border-slate-600/70 mt-10 flex justify-center items-center gap-5 text-2xl text-slate-100 pt-5">
+            class="w-full md:border-t-2 border-slate-600/70 md:mt-10 flex justify-center items-center gap-5 text-2xl text-slate-100 md:pt-5">
             <font-awesome-icon icon="fa-brands fa-telegram" />
             <font-awesome-icon icon="fa-brands fa-instagram" />
             <font-awesome-icon icon="fa-brands fa-whatsapp" />

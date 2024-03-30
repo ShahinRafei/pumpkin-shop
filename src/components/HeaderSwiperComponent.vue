@@ -6,13 +6,22 @@
     clickable: true,
 }" :navigation="true" :loop="true" :modules="modules" class="border-b-2 border-orange-400">
         <swiper-slide>
-            <img src="@/assets/images/banner1.webp" alt="" class="w-full h-[100px] sm:h-[200px] md:h-[300px] lg:h-[400px] object-cover">
+            <router-link to="/categories/jewelery">
+                <img src="@/assets/images/banner1.webp" alt=""
+                    class="w-full h-[200px] sm:h-[250px] md:h-[300px] lg:h-[400px] object-fill">
+            </router-link>
         </swiper-slide>
         <swiper-slide>
-            <img src="@/assets/images/banner3.jpg" alt="" class="w-full h-[100px] sm:h-[200px] md:h-[300px] lg:h-[400px] object-fill">
+            <router-link to="/categories/jewelery">
+                <img src="@/assets/images/banner3.jpg" alt=""
+                    class="w-full h-[200px] sm:h-[250px] md:h-[300px] lg:h-[400px] object-fill">
+            </router-link>
         </swiper-slide>
         <swiper-slide>
-            <img src="@/assets/images/banner4.png" alt="" class="w-full h-[100px] sm:h-[200px] md:h-[300px] lg:h-[400px] object-cover">
+            <router-link to="/categories/jewelery">
+                <img src="@/assets/images/banner4.png" alt=""
+                    class="w-full h-[200px] sm:h-[250px] md:h-[300px] lg:h-[400px] object-fill">
+            </router-link>
         </swiper-slide>
     </swiper>
 </template>
@@ -32,7 +41,7 @@ let modules = [Autoplay, Pagination, Navigation];
 
 </script>
 
-<style>
+<style lang="scss">
 .swiper-button-prev,
 .swiper-button-next {
     color: rgb(230, 107, 0);
@@ -43,18 +52,34 @@ let modules = [Autoplay, Pagination, Navigation];
     opacity: 30%;
     transform: scale(70%);
     transition: transform 0.2s ease-out;
-}
 
-.swiper-button-prev:hover,
-.swiper-button-next:hover {
-    box-shadow: 0 0 5px orange;
-    opacity: 80%;
-    transform: scale(80%);
-}
 
-.swiper-button-prev::after,
-.swiper-button-next::after {
-    font-size: 28px;
+    @media screen and (max-width: 767px) {
+        transform: scale(50%);
+    }
+
+    @media screen and (max-width: 639px) {
+        transform: scale(40%);
+        display: none;
+    }
+
+    &:hover {
+        box-shadow: 0 0 5px orange;
+        opacity: 80%;
+        transform: scale(75%);
+
+        @media screen and (max-width: 767px) {
+            transform: scale(55%);
+        }
+
+        @media screen and (max-width: 639px) {
+            transform: scale(45%);
+        }
+    }
+
+    &::after {
+        font-size: 28px;
+    }
 }
 
 .swiper-pagination-bullet {
@@ -66,7 +91,8 @@ let modules = [Autoplay, Pagination, Navigation];
     background-color: rgb(0, 157, 81) !important;
 }
 
-.swiper-button-prev.swiper-button-disabled, .swiper-button-next.swiper-button-disabled {
+.swiper-button-prev.swiper-button-disabled,
+.swiper-button-next.swiper-button-disabled {
     display: none !important;
 }
 </style>
