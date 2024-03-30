@@ -41,7 +41,7 @@
 
 
                 <!-- logo -->
-                <div class="absolute z-50 top-full left-1/2 -translate-x-1/2 drop-shadow-[0_4px_2px_rgb(0,0,0,0.1)]">
+                <div class="absolute hidden xl:block z-50 top-full left-1/2 -translate-x-1/2 drop-shadow-[0_4px_2px_rgb(0,0,0,0.1)]">
                     <div class="trapezoid bg-neutral-100 px-5 pb-3 flex items-end">
                         <img src="@/assets/images/logo.png" alt="pumpkin-shop" class="h-9">
                         <span
