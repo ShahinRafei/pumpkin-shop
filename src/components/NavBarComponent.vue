@@ -38,6 +38,5 @@ const categories = computed(()=>{
 //hook
 onMounted(async() => {
     await getCategories();
-    console.log(categories.value);
 });
 </script>

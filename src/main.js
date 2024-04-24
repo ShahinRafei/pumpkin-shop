@@ -12,10 +12,10 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
 /* import specific icons */
-import { faSearch, faShoppingCart, faUser, faTruck, faCreditCard, faBoxOpen } from '@fortawesome/free-solid-svg-icons'
+import { faSearch, faShoppingCart, faUser, faTruck, faCreditCard, faBoxOpen, faShop, faPlus, faMinus, faShield } from '@fortawesome/free-solid-svg-icons'
 import { faTelegram, faInstagram, faWhatsapp, faLinkedin, faXTwitter } from '@fortawesome/free-brands-svg-icons'
 
 /* add icons to the library */
-library.add(faSearch, faShoppingCart, faUser, faTruck, faCreditCard, faBoxOpen, faTelegram, faInstagram, faWhatsapp, faLinkedin, faXTwitter)
+library.add(faSearch, faShoppingCart, faUser, faTruck, faCreditCard, faBoxOpen, faTelegram, faInstagram, faWhatsapp, faLinkedin, faXTwitter, faShop, faPlus, faMinus, faShield)
 
 createApp(App).use(store).use(router).component('font-awesome-icon', FontAwesomeIcon).mount('#app')
