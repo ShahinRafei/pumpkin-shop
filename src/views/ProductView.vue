@@ -80,7 +80,8 @@
                     <div class="w-2/3">
                         <ReviewComment :comments="comments"></ReviewComment>
                     </div>
-                    <div class="w-1/3 grid grid-cols-[repeat(auto-fill,minmax(4rem,1fr))] gap-3">
+                    <div class="w-1/3">
+                        <GalleryComponent :images="userImages" />
                     </div>
                 </div>
                 <div class="w-full flex-shrink-0 min-h-96 bg-white transition-transform duration-500 shadow-inner shadow-slate-200 p-5"
@@ -103,6 +104,7 @@ import HeaderComponent from '@/components/HeaderComponent.vue';
 import NavBarComponent from '@/components/NavBarComponent.vue';
 import FooterComponent from '@/components/FooterComponent.vue';
 import ReviewComment from '@/components/ReviewComment.vue'
+import GalleryComponent from '@/components/GalleryComponent.vue';
 
 //data
 const route = useRoute();
@@ -120,7 +122,25 @@ const comments = ref([{
     negative_points: [{
         text: "a negative point"
     }],
-},])
+},
+{
+    user: "user name 2",
+    date: "2024-04-26",
+    rating: "3.4",
+    title: "Lorem ipsum",
+    review: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Animi tempora cum fugit, mollitia sed corporis dicta expedita unde, distinctio omnis earum ratione itaque saepe dolor minus voluptatem fuga excepturi incidunt!",
+    positive_points: [{
+        text: "a positive point"
+    },
+    {
+        text: "another positive point"
+    }],
+    negative_points: [{
+        text: "a negative point"
+    }],
+},]);
+
+const userImages = ref([]);
 
 //methods
 function addCount() {
@@ -144,5 +164,12 @@ const productDetails = computed(() => {
 //hooks
 onMounted(async () => {
     await getProductDetails();
+    for (let i = 0; i < 15; i++) {
+        userImages.value.push({
+            src: productDetails.value.image,
+            alt: productDetails.value.title
+        })
+    }
+    console.log(userImages.value);
 });
 </script>
