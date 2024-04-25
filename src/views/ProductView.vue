@@ -170,6 +170,5 @@ onMounted(async () => {
             alt: productDetails.value.title
         })
     }
-    console.log(userImages.value);
 });
 </script>
