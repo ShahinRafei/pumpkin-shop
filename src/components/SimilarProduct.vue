@@ -1,13 +1,9 @@
 <template>
     <div
-        class="container mx-auto bg-gradient-to-b from-orange-700/5 to-orange-600/60 rounded-lg shadow-inner outline outline-4 outline-orange-700/5 py-2 lg:py-5 px-1 my-2 sm:my-5">
+        class="container mx-auto bg-gradient-to-b from-orange-700/5 to-orange-600/60 rounded-lg shadow-inner outline outline-4 outline-orange-700/5 py-2 px-1 my-2 sm:my-5">
+        <p class="font-bold text-lg text-center mb-2 text-orange-900">Similar Items</p>
         <swiper :navigation="true" :slidesPerView="'auto'" :grabCursor="true" :spaceBetween="5" :freeMode="true"
             :modules="modules" class="max-w-max">
-            <swiper-slide>
-                <div class="w-28 sm:w-36 md:w-44 lg:w-52 pl-5 opacity-80">
-                    <img src="@/assets/images/up-to-off-percentage-15.png" alt="" class="w-full h-full object-cover">
-                </div>
-            </swiper-slide>
             <swiper-slide v-for="product in productsList" :key="product">
                 <router-link :to="{ name: 'product', params: { id: product.id } }">
                     <div class="w-28 sm:w-36 md:w-44 lg:w-52 bg-white p-3 shadow-md rounded-md">
@@ -37,7 +33,7 @@
 <script setup>
 //imports
 import store from '@/store';
-import { computed, ref, onMounted } from 'vue';
+import { computed, onMounted, defineProps, watch } from 'vue';
 
 //import swiper in component
 import { Swiper, SwiperSlide } from 'swiper/vue';
@@ -46,26 +42,31 @@ import 'swiper/css';
 import 'swiper/css/free-mode';
 import 'swiper/css/navigation';
 
+//data
 let modules = [FreeMode, Navigation];
 
-//data
-const showSkeleton = ref(false);
+const props = defineProps(['category']);
+
+//watchers
+watch(props, async()=>{
+    await getProductsList();
+})
 
 //api
 function getProductsList() {
-    return store.dispatch('getProductsListFromApi');
+    return store.dispatch('getCategoryProductsFromApi', props.category);
 }
 const productsList = computed(() => {
-    return store.getters.getProductsList;
+    return store.getters.getCategoryProducts;
 });
 
 onMounted(async () => {
-    showSkeleton.value = true;
     await getProductsList();
-    showSkeleton.value = false;
 })
 </script>
 
-<style scoped>.swiper-slide {
+<style scoped>
+.swiper-slide {
     width: auto;
-}</style>
+}
+</style>

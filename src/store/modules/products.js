@@ -2,7 +2,8 @@ import axiosInstance from '@/composables/axios-Instance.js';
 
 const state = {
     productsList: [],
-    productDetails: []
+    productDetails: [],
+    categoryProducts: [],
 }
 
 const getters = {
@@ -11,6 +12,9 @@ const getters = {
     },
     getProductDetails(state) {
         return state.productDetails;
+    },
+    getCategoryProducts(state){
+        return state.categoryProducts;
     }
 }
 
@@ -20,6 +24,9 @@ const mutations = {
     },
     setProductsDetails(state, details) {
         state.productDetails = details;
+    },
+    setCategoryProducts(state, products){
+        state.categoryProducts = products;
     }
 }
 
@@ -30,6 +37,10 @@ const actions = {
 
     getProductDetailsFromApi({ commit }, id) {
         return axiosInstance.get(`/products/${id}`).then(response => { commit('setProductsDetails', response.data) }).catch(error => { console.error(error) });
+    },
+
+    getCategoryProductsFromApi({ commit }, category){
+        return axiosInstance.get(`/products/category/${category}`).then(response => { commit('setCategoryProducts', response.data) }).catch(error => {console.error(error)});
     }
 }
 

@@ -89,7 +89,9 @@
                     <QuestionAndAnswerComponent :questions="questions" />
                 </div>
             </div>
+            <SimilarProduct v-if="productDetails.category" :category="productDetails.category" />
         </div>
+
 
         <FooterComponent />
     </div>
@@ -98,7 +100,7 @@
 <script setup>
 //imports
 import store from '@/store';
-import { computed, onMounted, ref } from 'vue';
+import { computed, onMounted, ref, watch } from 'vue';
 import { useRoute } from 'vue-router';
 
 //components
@@ -108,6 +110,7 @@ import FooterComponent from '@/components/FooterComponent.vue';
 import ReviewComment from '@/components/ReviewComment.vue'
 import GalleryComponent from '@/components/GalleryComponent.vue';
 import QuestionAndAnswerComponent from '@/components/QuestionAndAnswerComponent.vue';
+import SimilarProduct from '@/components/SimilarProduct.vue';
 
 //data
 const route = useRoute();
@@ -164,7 +167,6 @@ const questions = ref([{
         user: "admin 2",
         body: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Animi tempora cum fugit, mollitia sed corporis dicta expedita unde, distinctio omnis earum ratione itaque saepe dolor minus voluptatem fuga excepturi incidunt!"
     }
-
 },]);
 
 const userImages = ref([]);
@@ -179,6 +181,18 @@ function reduceCount() {
     if (count.value > 1)
         count.value--;
 }
+
+//watchers
+watch(()=> route.params.id, async()=>{
+    await getProductDetails();
+    userImages.value = [];
+    for (let i = 0; i < 15; i++) {
+        userImages.value.push({
+            src: productDetails.value.image,
+            alt: productDetails.value.title
+        })
+    }
+})
 
 //api
 function getProductDetails() {
