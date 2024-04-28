@@ -85,7 +85,9 @@
                     </div>
                 </div>
                 <div class="w-full flex-shrink-0 min-h-96 bg-white transition-transform duration-500 shadow-inner shadow-slate-200 p-5"
-                    :class="{ '-translate-x-full': tab == 'q&a' }"></div>
+                    :class="{ '-translate-x-full': tab == 'q&a' }">
+                    <QuestionAndAnswerComponent :questions="questions" />
+                </div>
             </div>
         </div>
 
@@ -105,6 +107,7 @@ import NavBarComponent from '@/components/NavBarComponent.vue';
 import FooterComponent from '@/components/FooterComponent.vue';
 import ReviewComment from '@/components/ReviewComment.vue'
 import GalleryComponent from '@/components/GalleryComponent.vue';
+import QuestionAndAnswerComponent from '@/components/QuestionAndAnswerComponent.vue';
 
 //data
 const route = useRoute();
@@ -138,6 +141,30 @@ const comments = ref([{
     negative_points: [{
         text: "a negative point"
     }],
+},]);
+
+const questions = ref([{
+    title: "Lorem ipsum dolor sit",
+    body: "Lorem ipsum dolor sit, amet consectetur adipis adip?",
+    answer: {
+        user: "admin",
+        body: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Animi tempora cum fugit, mollitia sed corporis dicta expedita unde, distinctio omnis earum ratione itaque saepe dolor minus voluptatem fuga excepturi incidunt!"
+    }
+
+},
+{
+    user: "user name",
+    title: "Lorem ipsum dolor sit",
+    body: "Lorem ipsum dolor sit, amet consectetur adipis adip?",
+},
+{
+    title: "Lorem ipsum",
+    body: "Lorem ipsum dolor sit, amet consectetur adipis adipisicing elit?",
+    answer: {
+        user: "admin 2",
+        body: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Animi tempora cum fugit, mollitia sed corporis dicta expedita unde, distinctio omnis earum ratione itaque saepe dolor minus voluptatem fuga excepturi incidunt!"
+    }
+
 },]);
 
 const userImages = ref([]);
