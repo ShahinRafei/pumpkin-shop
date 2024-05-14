@@ -1,5 +1,5 @@
 <template>
-    <div class="w-full grid grid-cols-2 gap-3">
+    <div class="w-full grid lg:grid-cols-2 gap-3">
         <div v-for="question in props.questions" :key="question"
             class="w-full rounded shadow-md ring-1 ring-slate-200 grid grid-cols-1 divide-y-2 divide-dashed divide-slate-300">
             <div class="p-3">

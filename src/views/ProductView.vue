@@ -5,12 +5,12 @@
         </HeaderComponent>
 
         <div class="container mx-auto py-5">
-            <div class="grid grid-cols-4 gap-3">
+            <div class="grid grid-cols-1 lg:grid-cols-4 gap-3">
                 <div
-                    class="w-full aspect-[2/3] p-5 bg-white rounded-lg ring-2 ring-amber-500/20 shadow-inner flex justify-center items-center">
+                    class="w-full max-w-80 mx-auto aspect-[2/3] p-5 bg-white rounded-lg ring-2 ring-amber-500/20 shadow-inner flex justify-center items-center">
                     <img :src="productDetails.image" :alt="productDetails.title" class="w-full h-full object-contain">
                 </div>
-                <div class="col-start-2 col-end-4 p-5 flex flex-col items-start gap-3">
+                <div class="lg:col-start-2 lg:col-end-4 p-5 flex flex-col items-start gap-3">
                     <h1 class="font-bold text-xl text-slate-700">{{ productDetails.title }}</h1>
                     <div class="w-full flex items-center justify-between">
                         <div class="text-white font-bold bg-orange-600/80 px-5 py-2 rounded-full">
@@ -26,7 +26,7 @@
                     <div class="text-justify opacity-90">{{ productDetails.description }}</div>
                 </div>
 
-                <div class="w-full aspect-[2/3] bg-white rounded-lg p-5 flex flex-col justify-between shadow-md">
+                <div class="w-full mx-auto h-80 lg:h-auto lg:aspect-[2/3] bg-white rounded-lg p-5 flex flex-col justify-between shadow-md">
                     <div class="flex flex-col gap-5">
                         <div class="flex items-center gap-2">
                             <font-awesome-icon icon="fa-solid fa-shop" class="text-2xl text-green-700 opacity-80" />
@@ -75,12 +75,12 @@
                     :class="{ 'border-b-4 border-orange-400': tab == 'q&a' }">Q&A</div>
             </div>
             <div class="w-full overflow-hidden flex ring-1 ring-slate-200 rounded-b-lg">
-                <div class="w-full flex gap-5 flex-shrink-0 max-h-screen overflow-y-auto bg-white transition-transform duration-500 shadow-inner shadow-slate-200 p-5"
+                <div class="w-full flex flex-col-reverse lg:flex-row gap-5 flex-shrink-0 max-h-screen overflow-y-auto bg-white transition-transform duration-500 shadow-inner shadow-slate-200 p-5"
                     :class="{ '-translate-x-full': tab == 'q&a' }" style="scrollbar-width: thin;">
-                    <div class="w-2/3">
+                    <div class="w-full lg:w-2/3">
                         <ReviewComment :comments="comments"></ReviewComment>
                     </div>
-                    <div class="w-1/3">
+                    <div class="w-full lg:w-1/3">
                         <GalleryComponent :images="userImages" />
                     </div>
                 </div>
