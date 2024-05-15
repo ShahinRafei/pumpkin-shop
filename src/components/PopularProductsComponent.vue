@@ -37,10 +37,7 @@
 <script setup>
 //imports
 import store from '@/store';
-import { computed, ref, onMounted } from 'vue';
-
-//data
-const showSkeleton = ref(false);
+import { computed, onMounted } from 'vue';
 
 //api
 function getProductsList() {
@@ -51,8 +48,6 @@ const productsList = computed(() => {
 });
 
 onMounted(async () => {
-    showSkeleton.value = true;
     await getProductsList();
-    showSkeleton.value = false;
 })
 </script>
